@@ -23,15 +23,21 @@ public class Main
 
             session.beginTransaction();
 
-            autor aut1 = new autor("Juan Gomez-Jurado","ESP");
+/*             autor aut1 = new autor("Juan Gomez-Jurado","ESP");
 
             llibres l1 = new llibres("El paciente",2,aut1);
 
-            llibres l2 = new llibres("Amanda Black 1 - Una herencia peligrosa",3,aut1);
+            llibres l2 = new llibres("Amanda Black 1 - Una herencia peligrosa",3,aut1); */
 
+            autor aut2 = new autor("Mary clark Higgings","ENG");
+
+            llibres l1 = new llibres();
+
+            l1.setTitle("Mistery Go");
+            
             session.persist(l1);
 
-            session.persist(l2);
+//            session.persist(l2);
 
             session.getTransaction().commit();
 

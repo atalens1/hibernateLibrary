@@ -44,8 +44,8 @@
         <!-- Ficheros de mapeo. Pueden combinarse-->
       
         <!-- Mapeo DENTRO DE LA CLASE -->
-        <mapping class="com.hibernate.iticbcn.model.autor"/>
-        <mapping class="com.hibernate.iticbcn.model.llibres"/>
+        <mapping class="com.iticbcn.hibernate.model.autor"/>
+        <mapping class="com.iticbcn.hibernate.model.llibres"/>
       
     </session-factory>
 </hibernate-configuration>

@@ -24,8 +24,7 @@ public class llibres implements Serializable{
    @Column
    private int NumEdicio;
    @ManyToOne(cascade=CascadeType.PERSIST)
-   @JoinColumn(name="idAutor",foreignKey =
-   @ForeignKey(name="FK_LIB_AUT"))
+   @JoinColumn(name="idAutor",foreignKey = @ForeignKey(name="FK_LIB_AUT"),nullable = false)
       private autor autor;
 
     public llibres() {}
