@@ -12,9 +12,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 
 @Entity
-@Table(name="Authors")
+@Table(name="Authors",uniqueConstraints = {@UniqueConstraint(columnNames = "nomAutor")})
 public class autor implements Serializable{
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
