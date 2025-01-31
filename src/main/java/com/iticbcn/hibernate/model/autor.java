@@ -16,7 +16,7 @@ import jakarta.persistence.UniqueConstraint;
 
 @Entity
 @Table(name="Authors",uniqueConstraints = {@UniqueConstraint(columnNames = "nomAutor")})
-public class autor implements Serializable{
+public class Autor implements Serializable{
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int idAutor;
@@ -25,12 +25,12 @@ public class autor implements Serializable{
     @Column
     private String nacionalitat;
 
-    @OneToMany(mappedBy="autor",cascade=CascadeType.PERSIST,fetch=FetchType.LAZY)
-    private Set<llibres> llibres;
+    @OneToMany(mappedBy="Autor",cascade=CascadeType.PERSIST,fetch=FetchType.LAZY)
+    private Set<LLibres> llibres;
 
-    public autor() {}
+    public Autor() {}
 
-    public autor(String nomAutor, String nacionalitat) {
+    public Autor(String nomAutor, String nacionalitat) {
         this.nomAutor = nomAutor;
         this.nacionalitat = nacionalitat;
     }
@@ -59,11 +59,11 @@ public class autor implements Serializable{
         this.nacionalitat = nacionalitat;
     }
 
-    public Set<llibres> getLlibres() {
+    public Set<LLibres> getLLibres() {
         return llibres;
     }
 
-    public void setLlibres(Set<llibres> llibres) {
+    public void setLLibres(Set<LLibres> llibres) {
         this.llibres = llibres;
     }
 

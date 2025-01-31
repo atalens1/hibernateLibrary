@@ -15,7 +15,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="Books")
-public class llibres implements Serializable{
+public class LLibres implements Serializable{
    @Id
    @GeneratedValue(strategy= GenerationType.IDENTITY)
    private int idLlibre;
@@ -25,11 +25,11 @@ public class llibres implements Serializable{
    private int NumEdicio;
    @ManyToOne(cascade=CascadeType.PERSIST)
    @JoinColumn(name="idAutor",foreignKey = @ForeignKey(name="FK_LIB_AUT"),nullable = false)
-      private autor autor;
+      private Autor autor;
 
-    public llibres() {}
+    public LLibres() {}
 
-    public llibres(String title, int numEdicio, com.iticbcn.hibernate.model.autor autor) {
+    public LLibres(String title, int numEdicio, Autor autor) {
         Title = title;
         NumEdicio = numEdicio;
         this.autor = autor;
@@ -59,11 +59,11 @@ public class llibres implements Serializable{
         NumEdicio = numEdicio;
     }
 
-    public autor getAutor() {
+    public Autor getAutor() {
         return autor;
     }
 
-    public void setAutor(autor autor) {
+    public void setAutor(Autor autor) {
         this.autor = autor;
     }
 

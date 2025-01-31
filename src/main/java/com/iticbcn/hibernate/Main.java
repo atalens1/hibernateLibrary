@@ -2,8 +2,8 @@ package com.iticbcn.hibernate;
 
 import org.hibernate.SessionFactory;
 
-import com.iticbcn.hibernate.model.autor;
-import com.iticbcn.hibernate.model.llibres;
+import com.iticbcn.hibernate.model.Autor;
+import com.iticbcn.hibernate.model.LLibres;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -23,13 +23,13 @@ public class Main
 
             session.beginTransaction();
 
-            /*Inserció d'un autor i dos llibres */
+            /*Inserció d'un Autor i dos LLibres */
             
-            autor aut1 = new autor("Juan Gomez-Jurado","ESP");
+            Autor aut1 = new Autor("Juan Gomez-Jurado","ESP");
 
-            llibres l1 = new llibres("El paciente",2,aut1);
+            LLibres l1 = new LLibres("El paciente",2,aut1);
 
-            llibres l2 = new llibres("Amanda Black 1 - Una herencia peligrosa",3,aut1);
+            LLibres l2 = new LLibres("Amanda Black 1 - Una herencia peligrosa",3,aut1);
 
             session.persist(l1);
 
@@ -55,11 +55,11 @@ public class Main
 
             session.beginTransaction();
 
-            /*Inserció d'un autor i un llibre sense especificar l'autor. Genera excepció not null */
+            /*Inserció d'un Autor i un llibre sense especificar l'Autor. Genera excepció not null */
 
-            autor aut2 = new autor("Mary clark Higgings","ENG");
+            Autor aut2 = new Autor("Mary clark Higgings","ENG");
 
-            llibres l3 = new llibres();
+            LLibres l3 = new LLibres();
 
             l3.setTitle("Mistery Go");
 
